@@ -1,5 +1,6 @@
 package com.example.jeffkrantz.firstmap;
 
+import android.app.ActionBar;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -7,6 +8,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import android.app.Activity;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -34,6 +37,12 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowCustomEnabled(true);
+        View cView = getLayoutInflater().inflate(R.layout.actionbar, null);
+        actionBar.setCustomView(cView);
+        actionBar.setDisplayShowTitleEnabled(false);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
@@ -122,6 +131,7 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
                 .build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
     }
 
     public void processFinish(String output){
