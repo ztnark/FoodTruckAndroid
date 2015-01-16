@@ -118,7 +118,7 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(CHICAGO)
-                .zoom(17)
+                .zoom(14)
                 .build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
@@ -137,9 +137,12 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
                     list.add(jArray.get(i).toString());
                 }
             }
-            JSONObject jsonObject = new JSONObject(list.get(0));
-            Log.e("log_tag", jsonObject.getString("url"));
-            setTrucks(jsonObject);
+
+            for(Integer i = 0; i <= list.size() - 1; i++)
+            {
+                JSONObject jsonObject = new JSONObject(list.get(i));
+                setTrucks(jsonObject);
+            }
 
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
