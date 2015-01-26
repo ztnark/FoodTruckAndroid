@@ -1,33 +1,26 @@
-package com.example.jeffkrantz.firstmap;
+package com.alldigitalshop.jeffkrantz.trucktrackr;
 
 import android.app.ActionBar;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+
+import com.alldigitalshop.jeffkrantz.trucktrackr.R;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.CameraUpdateFactory;
-import android.app.Activity;
+
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.net.URI;
 import java.util.ArrayList;
 
 
@@ -38,10 +31,11 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowCustomEnabled(true);
         View cView = getLayoutInflater().inflate(R.layout.actionbar, null);
         actionBar.setCustomView(cView);
-        actionBar.setDisplayShowTitleEnabled(false);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);

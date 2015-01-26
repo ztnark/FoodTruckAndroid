@@ -1,4 +1,4 @@
-package com.example.jeffkrantz.firstmap;
+package com.alldigitalshop.jeffkrantz.trucktrackr;
 
 import org.json.JSONObject;
 

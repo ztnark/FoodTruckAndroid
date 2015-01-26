@@ -15,7 +15,7 @@
         android:src="@drawable/textlogo"
         android:layout_gravity="center"
         android:contentDescription="Logo"
-        android:layout_marginRight="-15dp" />
+        />
 
 
 
