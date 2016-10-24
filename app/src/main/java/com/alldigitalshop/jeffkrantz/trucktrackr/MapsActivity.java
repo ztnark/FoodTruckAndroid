@@ -1,14 +1,17 @@
 package com.alldigitalshop.jeffkrantz.trucktrackr;
 
 import android.app.ActionBar;
+import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
 import com.alldigitalshop.jeffkrantz.trucktrackr.R;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.CameraUpdateFactory;
 
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 
@@ -128,7 +131,7 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
 
     }
 
-    public void processFinish(String output){
+    public void processFinish(String output) {
         Log.e("log_tag", output);
         try {
 //            JSONObject jObject = new JSONObject(output);
@@ -137,13 +140,12 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
             ArrayList<String> list = new ArrayList<String>();
             if (jArray != null) {
                 int len = jArray.length();
-                for (int i=0;i<len;i++){
+                for (int i = 0; i < len; i++) {
                     list.add(jArray.get(i).toString());
                 }
             }
 
-            for(Integer i = 0; i <= list.size() - 1; i++)
-            {
+            for (Integer i = 0; i <= list.size() - 1; i++) {
                 JSONObject jsonObject = new JSONObject(list.get(i));
                 setTrucks(jsonObject);
             }
