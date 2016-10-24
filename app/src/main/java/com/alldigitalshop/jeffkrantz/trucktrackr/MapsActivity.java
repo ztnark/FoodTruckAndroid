@@ -108,15 +108,6 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
         }
-//        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, -87.6297982))
-//                .title("Soups in the Loop")
-//                .icon(BitmapDescriptorFactory.fromAsset("truck.png")));
-//        mMap.addMarker(new MarkerOptions().position(new LatLng(41.8722222, -87.6275211))
-//                .title("Wow Bao")
-//                .icon(BitmapDescriptorFactory.fromAsset("truck.png")));
-//        mMap.addMarker(new MarkerOptions().position(new LatLng(41.8719872, -87.6244261))
-//                .title("Beaver Donuts")
-//                .icon(BitmapDescriptorFactory.fromAsset("truck.png")));
     }
 
     private void setCamera(){
@@ -134,7 +125,6 @@ public class MapsActivity extends FragmentActivity implements AsyncResponse  {
     public void processFinish(String output) {
         Log.e("log_tag", output);
         try {
-//            JSONObject jObject = new JSONObject(output);
             JSONArray jArray = new JSONArray(output);
 
             ArrayList<String> list = new ArrayList<String>();

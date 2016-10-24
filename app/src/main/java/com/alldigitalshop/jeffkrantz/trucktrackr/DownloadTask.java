@@ -35,30 +35,14 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
 
             // NEW CODE
             String line = in.readLine();
-
-//            Log.e("log_tag", line);
-//            Log.e("log_tag", "YEAA");
-
             return line;
 
         } catch (Exception e) {
-//            Log.e("log_tag", "Error in http connection " + e.toString());
-//            Log.e("log_tag", "NOOO");
             return "Error in http connection " + e.toString();
         }
     }
 
     protected void onPostExecute(String line) {
-//        JSONObject jObject = null;
-        Log.e("log_tag", "Double YEAAA");
         delegate.processFinish(line);
-//        try {
-//            JSONObject jObject = new JSONObject(line);
-//            String aJsonString = jObject.getString("trucks");
-////            Log.e("log_tag", aJsonString);
-//
-//        } catch (JSONException e) {
-//            Log.e("JSON Parser", "Error parsing data " + e.toString());
-//        }
     }
 }
